@@ -1,0 +1,45 @@
+<div class="medium-12 large-12 columns">
+    <h3>Simple HTTP call</h3>
+    <form [formGroup]="form">
+    <div class="row">
+      <div class="small-2 columns">
+        <label for="middle-label" class="middle">User Name</label>
+      </div>
+      <div class="small-10 columns">
+        <input formControlName="userName" type="text" id="middle-label" placeholder="mhevery">
+        <div  class="callout warning" 
+              [hidden]="form.controls.userName.valid || form.controls.userName.pristine"
+              >
+          <p>User name is invalid</p>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="small-12 columns" hidden>
+        <input  class="button hollow success"  type="submit" value="SEARCH" (click)="onSubmit()" [disabled]="!form.valid" />
+      </div>
+    </div>
+    </form>
+
+    <table>
+  <thead>
+    <tr>
+      <th width="150">Avatar</th>
+      <th width="200">Username</th>
+      <th width="250">URL</th>
+      <th width="250">ACTION</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of users">
+      <td><img width="200" [src]="user.avatar_url"  /></td>
+      <td>{{user.login}}</td>
+      <td><a>{{user.html_url}}</a></td>
+      <td><a class="button hollow" 
+              (click)="onClickShowDetails(user.login)" >
+        Action</a></td>
+    </tr>
+  </tbody>
+</table>
+    
+</div>

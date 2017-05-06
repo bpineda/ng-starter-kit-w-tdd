@@ -1,0 +1,22 @@
+<div class="top-bar">
+  <div class="row">
+    <div class="top-bar-left">
+      <ul class="dropdown menu" data-dropdown-menu>
+        <li><a [routerLink]="['/home']">Home</a></li>        
+        <li><a [routerLink]="['/github']">GitHub Service</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+<br>
+<div class="row">
+  <router-outlet></router-outlet>
+</div>
+<div class="row column">
+  <hr>
+  <ul class="menu">
+    <li><a [routerLink]="['/home']">Home</a></li>
+    <li><a [routerLink]="['/github']">GitHub Service</a></li>
+    <li class="float-right">Copyright 2017</li>
+  </ul>
+</div>
